@@ -1,0 +1,145 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="serveitDBModelStoreContainer" CdmEntityContainer="ServeitDBEntities">
+    <EntitySetMapping Name="AmericanItems">
+      <EntityTypeMapping TypeName="serveitDBModel.AmericanItem">
+        <MappingFragment StoreEntitySet="AmericanItems">
+          <ScalarProperty Name="A_id" ColumnName="A_id" />
+          <ScalarProperty Name="A_name" ColumnName="A_name" />
+          <ScalarProperty Name="A_price" ColumnName="A_price" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BengaliItems">
+      <EntityTypeMapping TypeName="serveitDBModel.BengaliItem">
+        <MappingFragment StoreEntitySet="BengaliItems">
+          <ScalarProperty Name="B_id" ColumnName="B_id" />
+          <ScalarProperty Name="B_name" ColumnName="B_name" />
+          <ScalarProperty Name="B_price" ColumnName="B_price" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BreakFasts">
+      <EntityTypeMapping TypeName="serveitDBModel.BreakFast">
+        <MappingFragment StoreEntitySet="BreakFast">
+          <ScalarProperty Name="Item_id" ColumnName="Item_id" />
+          <ScalarProperty Name="Item_name" ColumnName="Item_name" />
+          <ScalarProperty Name="Item_price" ColumnName="Item_price" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ChineseItems">
+      <EntityTypeMapping TypeName="serveitDBModel.ChineseItem">
+        <MappingFragment StoreEntitySet="ChineseItems">
+          <ScalarProperty Name="C_id" ColumnName="C_id" />
+          <ScalarProperty Name="C_name" ColumnName="C_name" />
+          <ScalarProperty Name="C_price" ColumnName="C_price" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ColdBeverages">
+      <EntityTypeMapping TypeName="serveitDBModel.ColdBeverage">
+        <MappingFragment StoreEntitySet="ColdBeverage">
+          <ScalarProperty Name="Cb_pic" ColumnName="Cb_pic" />
+          <ScalarProperty Name="Cb_Id" ColumnName="Cb_Id" />
+          <ScalarProperty Name="Cb_name" ColumnName="Cb_name" />
+          <ScalarProperty Name="Cb_price" ColumnName="Cb_price" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Desserts">
+      <EntityTypeMapping TypeName="serveitDBModel.Dessert">
+        <MappingFragment StoreEntitySet="Dessert">
+          <ScalarProperty Name="D_id" ColumnName="D_id" />
+          <ScalarProperty Name="D_name" ColumnName="D_name" />
+          <ScalarProperty Name="D_price" ColumnName="D_price" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DinnerCatagories">
+      <EntityTypeMapping TypeName="serveitDBModel.DinnerCatagory">
+        <MappingFragment StoreEntitySet="DinnerCatagory">
+          <ScalarProperty Name="Categort_id" ColumnName="Categort_id" />
+          <ScalarProperty Name="Category_name" ColumnName="Category_name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DrinksCategories">
+      <EntityTypeMapping TypeName="serveitDBModel.DrinksCategory">
+        <MappingFragment StoreEntitySet="DrinksCategory">
+          <ScalarProperty Name="Dc_id" ColumnName="Dc_id" />
+          <ScalarProperty Name="Dc_name" ColumnName="Dc_name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HotBeverages">
+      <EntityTypeMapping TypeName="serveitDBModel.HotBeverage">
+        <MappingFragment StoreEntitySet="HotBeverage">
+          <ScalarProperty Name="Hb_Id" ColumnName="Hb_Id" />
+          <ScalarProperty Name="Hb_name" ColumnName="Hb_name" />
+          <ScalarProperty Name="Hb_price" ColumnName="Hb_price" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LunchCategories">
+      <EntityTypeMapping TypeName="serveitDBModel.LunchCategory">
+        <MappingFragment StoreEntitySet="LunchCategory">
+          <ScalarProperty Name="Category_id" ColumnName="Category_id" />
+          <ScalarProperty Name="Category_name" ColumnName="Category_name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OpenBeverages">
+      <EntityTypeMapping TypeName="serveitDBModel.OpenBeverage">
+        <MappingFragment StoreEntitySet="OpenBeverage">
+          <ScalarProperty Name="Op_Id" ColumnName="Op_Id" />
+          <ScalarProperty Name="Op_name" ColumnName="Op_name" />
+          <ScalarProperty Name="Op_price" ColumnName="Op_price" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PrintReceipts">
+      <EntityTypeMapping TypeName="serveitDBModel.PrintReceipt">
+        <MappingFragment StoreEntitySet="PrintReceipt">
+          <ScalarProperty Name="Rt_id" ColumnName="Rt_id" />
+          <ScalarProperty Name="Rt_description" ColumnName="Rt_description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ReceiptHistories">
+      <EntityTypeMapping TypeName="serveitDBModel.ReceiptHistory">
+        <MappingFragment StoreEntitySet="ReceiptHistory">
+          <ScalarProperty Name="Rt_id" ColumnName="Rt_id" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="Table_id" ColumnName="Table_id" />
+          <ScalarProperty Name="User_id" ColumnName="User_id" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="Due" ColumnName="Due" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserLists">
+      <EntityTypeMapping TypeName="serveitDBModel.UserList">
+        <MappingFragment StoreEntitySet="UserList">
+          <ScalarProperty Name="Server" ColumnName="Server" />
+          <ScalarProperty Name="User_id" ColumnName="User_id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Access" ColumnName="Access" />
+          <ScalarProperty Name="PassWord" ColumnName="PassWord" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ViewReceiptDescriptions">
+      <EntityTypeMapping TypeName="serveitDBModel.ViewReceiptDescription">
+        <MappingFragment StoreEntitySet="ViewReceiptDescription">
+          <ScalarProperty Name="Rt_id" ColumnName="Rt_id" />
+          <ScalarProperty Name="User_id" ColumnName="User_id" />
+          <ScalarProperty Name="Category" ColumnName="Category" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="Descrption" ColumnName="Descrption" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

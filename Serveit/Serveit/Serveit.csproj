@@ -1,0 +1,385 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B331A5D1-F4EE-483E-B219-F5548DEC9F70}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Serveit</RootNamespace>
+    <AssemblyName>Serveit</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DineIn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DineIn.Designer.cs">
+      <DependentUpon>DineIn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditMenuItem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditMenuItem.Designer.cs">
+      <DependentUpon>EditMenuItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditReceipt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditReceipt.Designer.cs">
+      <DependentUpon>EditReceipt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InfoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InfoForm.Designer.cs">
+      <DependentUpon>InfoForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LogIn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LogIn.Designer.cs">
+      <DependentUpon>LogIn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainPage.Designer.cs">
+      <DependentUpon>MainPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model\AmericanItem.cs">
+      <DependentUpon>ServeitModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\BengaliItem.cs">
+      <DependentUpon>ServeitModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\BreakFast.cs">
+      <DependentUpon>ServeitModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\ChineseItem.cs">
+      <DependentUpon>ServeitModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\ColdBeverage.cs">
+      <DependentUpon>ServeitModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Dessert.cs">
+      <DependentUpon>ServeitModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\DinnerCatagory.cs">
+      <DependentUpon>ServeitModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\DrinksCategory.cs">
+      <DependentUpon>ServeitModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\HotBeverage.cs">
+      <DependentUpon>ServeitModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\LunchCategory.cs">
+      <DependentUpon>ServeitModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\OpenBeverage.cs">
+      <DependentUpon>ServeitModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\PrintReceipt.cs">
+      <DependentUpon>ServeitModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\ReceiptHistory.cs">
+      <DependentUpon>ServeitModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\ServeitModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ServeitModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\ServeitModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ServeitModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\ServeitModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ServeitModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Model\UserList.cs">
+      <DependentUpon>ServeitModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\ViewReceiptDescription.cs">
+      <DependentUpon>ServeitModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="NewReceipt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewReceipt.Designer.cs">
+      <DependentUpon>NewReceipt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Registeration.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Registeration.Designer.cs">
+      <DependentUpon>Registeration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RePrint.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RePrint.Designer.cs">
+      <DependentUpon>RePrint.cs</DependentUpon>
+    </Compile>
+    <Compile Include="userInfoPassing.cs" />
+    <Compile Include="ViewReceipt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewReceipt.Designer.cs">
+      <DependentUpon>ViewReceipt.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="DineIn.resx">
+      <DependentUpon>DineIn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditMenuItem.resx">
+      <DependentUpon>EditMenuItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditReceipt.resx">
+      <DependentUpon>EditReceipt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InfoForm.resx">
+      <DependentUpon>InfoForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LogIn.resx">
+      <DependentUpon>LogIn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainPage.resx">
+      <DependentUpon>MainPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewReceipt.resx">
+      <DependentUpon>NewReceipt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Registeration.resx">
+      <DependentUpon>Registeration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RePrint.resx">
+      <DependentUpon>RePrint.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewReceipt.resx">
+      <DependentUpon>ViewReceipt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EntityDeploy Include="Model\ServeitModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ServeitModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Model\ServeitModel.edmx.diagram">
+      <DependentUpon>ServeitModel.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Demo-1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Page_1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Dine.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Edit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Info.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Log Out.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Re-Print.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Take Away.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Turn Off.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\View Receipts.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\page2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\page21.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\close.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\reserve.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\order.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\changetable.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\page3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\printfinish.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\finish.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cancel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\remove.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\printbtn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\login.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\key.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\login.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\register.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\editpage.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\save.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\viewrct.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5.2 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Model\ServeitModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ServeitModel.edmx</DependentUpon>
+      <LastGenOutput>ServeitModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Model\ServeitModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ServeitModel.edmx</DependentUpon>
+      <LastGenOutput>ServeitModel.cs</LastGenOutput>
+    </Content>
+    <None Include="Resources\7Up_71775_450x450.png" />
+    <Content Include="serveitDB.mdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="serveitDB_log.ldf">
+      <DependentUpon>serveitDB.mdf</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

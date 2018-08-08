@@ -1,0 +1,145 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="serveitDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="AmericanItem">
+    <Key>
+      <PropertyRef Name="A_id" />
+    </Key>
+    <Property Name="A_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="A_name" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="A_price" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+  </EntityType>
+  <EntityType Name="BengaliItem">
+    <Key>
+      <PropertyRef Name="B_id" />
+    </Key>
+    <Property Name="B_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="B_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="B_price" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+  </EntityType>
+  <EntityType Name="BreakFast">
+    <Key>
+      <PropertyRef Name="Item_id" />
+    </Key>
+    <Property Name="Item_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Item_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Item_price" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ChineseItem">
+    <Key>
+      <PropertyRef Name="C_id" />
+    </Key>
+    <Property Name="C_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="C_name" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="C_price" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ColdBeverage">
+    <Key>
+      <PropertyRef Name="Cb_Id" />
+    </Key>
+    <Property Name="Cb_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Cb_name" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+    <Property Name="Cb_price" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Cb_pic" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Dessert">
+    <Key>
+      <PropertyRef Name="D_id" />
+    </Key>
+    <Property Name="D_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="D_name" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="D_price" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DinnerCatagory">
+    <Key>
+      <PropertyRef Name="Categort_id" />
+    </Key>
+    <Property Name="Categort_id" Type="Int32" Nullable="false" />
+    <Property Name="Category_name" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+  </EntityType>
+  <EntityType Name="DrinksCategory">
+    <Key>
+      <PropertyRef Name="Dc_id" />
+    </Key>
+    <Property Name="Dc_id" Type="Int32" Nullable="false" />
+    <Property Name="Dc_name" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="HotBeverage">
+    <Key>
+      <PropertyRef Name="Hb_Id" />
+    </Key>
+    <Property Name="Hb_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Hb_name" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="Hb_price" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+  </EntityType>
+  <EntityType Name="LunchCategory">
+    <Key>
+      <PropertyRef Name="Category_id" />
+    </Key>
+    <Property Name="Category_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Category_name" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+  </EntityType>
+  <EntityType Name="OpenBeverage">
+    <Key>
+      <PropertyRef Name="Op_Id" />
+    </Key>
+    <Property Name="Op_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Op_name" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="Op_price" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PrintReceipt">
+    <Key>
+      <PropertyRef Name="Rt_id" />
+    </Key>
+    <Property Name="Rt_id" Type="Int32" Nullable="false" />
+    <Property Name="Rt_description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ReceiptHistory">
+    <Key>
+      <PropertyRef Name="Rt_id" />
+    </Key>
+    <Property Name="Rt_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Type" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="Table_id" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="User_id" Type="Int32" />
+    <Property Name="Date" Type="DateTime" Precision="3" />
+    <Property Name="Amount" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="Due" Type="Decimal" Precision="19" Scale="4" />
+  </EntityType>
+  <EntityType Name="UserList">
+    <Key>
+      <PropertyRef Name="User_id" />
+    </Key>
+    <Property Name="User_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="Access" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="PassWord" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Server" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+  </EntityType>
+  <EntityType Name="ViewReceiptDescription">
+    <Key>
+      <PropertyRef Name="Rt_id" />
+    </Key>
+    <Property Name="Rt_id" Type="Int32" Nullable="false" />
+    <Property Name="User_id" Type="Int32" Nullable="false" />
+    <Property Name="Category" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="Type" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+    <Property Name="Descrption" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="ServeitDBEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="AmericanItems" EntityType="Self.AmericanItem" />
+    <EntitySet Name="BengaliItems" EntityType="Self.BengaliItem" />
+    <EntitySet Name="BreakFasts" EntityType="Self.BreakFast" />
+    <EntitySet Name="ChineseItems" EntityType="Self.ChineseItem" />
+    <EntitySet Name="ColdBeverages" EntityType="Self.ColdBeverage" />
+    <EntitySet Name="Desserts" EntityType="Self.Dessert" />
+    <EntitySet Name="DinnerCatagories" EntityType="Self.DinnerCatagory" />
+    <EntitySet Name="DrinksCategories" EntityType="Self.DrinksCategory" />
+    <EntitySet Name="HotBeverages" EntityType="Self.HotBeverage" />
+    <EntitySet Name="LunchCategories" EntityType="Self.LunchCategory" />
+    <EntitySet Name="OpenBeverages" EntityType="Self.OpenBeverage" />
+    <EntitySet Name="PrintReceipts" EntityType="Self.PrintReceipt" />
+    <EntitySet Name="ReceiptHistories" EntityType="Self.ReceiptHistory" />
+    <EntitySet Name="UserLists" EntityType="Self.UserList" />
+    <EntitySet Name="ViewReceiptDescriptions" EntityType="Self.ViewReceiptDescription" />
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,145 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="serveitDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="AmericanItems">
+    <Key>
+      <PropertyRef Name="A_id" />
+    </Key>
+    <Property Name="A_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="A_name" Type="char" MaxLength="10" Nullable="false" />
+    <Property Name="A_price" Type="money" Nullable="false" />
+  </EntityType>
+  <EntityType Name="BengaliItems">
+    <Key>
+      <PropertyRef Name="B_id" />
+    </Key>
+    <Property Name="B_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="B_name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="B_price" Type="money" Nullable="false" />
+  </EntityType>
+  <EntityType Name="BreakFast">
+    <Key>
+      <PropertyRef Name="Item_id" />
+    </Key>
+    <Property Name="Item_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Item_name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Item_price" Type="money" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ChineseItems">
+    <Key>
+      <PropertyRef Name="C_id" />
+    </Key>
+    <Property Name="C_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="C_name" Type="char" MaxLength="10" Nullable="false" />
+    <Property Name="C_price" Type="nchar" MaxLength="10" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ColdBeverage">
+    <Key>
+      <PropertyRef Name="Cb_Id" />
+    </Key>
+    <Property Name="Cb_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Cb_name" Type="char" MaxLength="10" />
+    <Property Name="Cb_price" Type="money" />
+    <Property Name="Cb_pic" Type="image" />
+  </EntityType>
+  <EntityType Name="Dessert">
+    <Key>
+      <PropertyRef Name="D_id" />
+    </Key>
+    <Property Name="D_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="D_name" Type="char" MaxLength="10" Nullable="false" />
+    <Property Name="D_price" Type="money" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DinnerCatagory">
+    <Key>
+      <PropertyRef Name="Categort_id" />
+    </Key>
+    <Property Name="Categort_id" Type="int" Nullable="false" />
+    <Property Name="Category_name" Type="char" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="DrinksCategory">
+    <Key>
+      <PropertyRef Name="Dc_id" />
+    </Key>
+    <Property Name="Dc_id" Type="int" Nullable="false" />
+    <Property Name="Dc_name" Type="char" MaxLength="10" Nullable="false" />
+  </EntityType>
+  <EntityType Name="HotBeverage">
+    <Key>
+      <PropertyRef Name="Hb_Id" />
+    </Key>
+    <Property Name="Hb_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Hb_name" Type="char" MaxLength="10" Nullable="false" />
+    <Property Name="Hb_price" Type="money" Nullable="false" />
+  </EntityType>
+  <EntityType Name="LunchCategory">
+    <Key>
+      <PropertyRef Name="Category_id" />
+    </Key>
+    <Property Name="Category_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Category_name" Type="char" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="OpenBeverage">
+    <Key>
+      <PropertyRef Name="Op_Id" />
+    </Key>
+    <Property Name="Op_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Op_name" Type="char" MaxLength="10" Nullable="false" />
+    <Property Name="Op_price" Type="money" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PrintReceipt">
+    <Key>
+      <PropertyRef Name="Rt_id" />
+    </Key>
+    <Property Name="Rt_id" Type="int" Nullable="false" />
+    <Property Name="Rt_description" Type="text" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ReceiptHistory">
+    <Key>
+      <PropertyRef Name="Rt_id" />
+    </Key>
+    <Property Name="Rt_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Type" Type="char" MaxLength="10" Nullable="false" />
+    <Property Name="Table_id" Type="varchar" MaxLength="50" />
+    <Property Name="User_id" Type="int" />
+    <Property Name="Date" Type="datetime" />
+    <Property Name="Amount" Type="money" Nullable="false" />
+    <Property Name="Due" Type="money" />
+  </EntityType>
+  <EntityType Name="UserList">
+    <Key>
+      <PropertyRef Name="User_id" />
+    </Key>
+    <Property Name="User_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="char" MaxLength="10" Nullable="false" />
+    <Property Name="Access" Type="char" MaxLength="10" Nullable="false" />
+    <Property Name="PassWord" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Server" Type="char" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="ViewReceiptDescription">
+    <Key>
+      <PropertyRef Name="Rt_id" />
+    </Key>
+    <Property Name="Rt_id" Type="int" Nullable="false" />
+    <Property Name="User_id" Type="int" Nullable="false" />
+    <Property Name="Category" Type="char" MaxLength="10" Nullable="false" />
+    <Property Name="Type" Type="char" MaxLength="10" />
+    <Property Name="Descrption" Type="text" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="serveitDBModelStoreContainer">
+    <EntitySet Name="AmericanItems" EntityType="Self.AmericanItems" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BengaliItems" EntityType="Self.BengaliItems" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BreakFast" EntityType="Self.BreakFast" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ChineseItems" EntityType="Self.ChineseItems" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ColdBeverage" EntityType="Self.ColdBeverage" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Dessert" EntityType="Self.Dessert" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DinnerCatagory" EntityType="Self.DinnerCatagory" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DrinksCategory" EntityType="Self.DrinksCategory" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="HotBeverage" EntityType="Self.HotBeverage" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LunchCategory" EntityType="Self.LunchCategory" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="OpenBeverage" EntityType="Self.OpenBeverage" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PrintReceipt" EntityType="Self.PrintReceipt" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ReceiptHistory" EntityType="Self.ReceiptHistory" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UserList" EntityType="Self.UserList" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ViewReceiptDescription" EntityType="Self.ViewReceiptDescription" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

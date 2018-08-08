@@ -1,0 +1,465 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="serveitDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="AmericanItems">
+          <Key>
+            <PropertyRef Name="A_id" />
+          </Key>
+          <Property Name="A_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="A_name" Type="char" MaxLength="10" Nullable="false" />
+          <Property Name="A_price" Type="money" Nullable="false" />
+        </EntityType>
+        <EntityType Name="BengaliItems">
+          <Key>
+            <PropertyRef Name="B_id" />
+          </Key>
+          <Property Name="B_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="B_name" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="B_price" Type="money" Nullable="false" />
+        </EntityType>
+        <EntityType Name="BreakFast">
+          <Key>
+            <PropertyRef Name="Item_id" />
+          </Key>
+          <Property Name="Item_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Item_name" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Item_price" Type="money" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ChineseItems">
+          <Key>
+            <PropertyRef Name="C_id" />
+          </Key>
+          <Property Name="C_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="C_name" Type="char" MaxLength="10" Nullable="false" />
+          <Property Name="C_price" Type="nchar" MaxLength="10" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ColdBeverage">
+          <Key>
+            <PropertyRef Name="Cb_Id" />
+          </Key>
+          <Property Name="Cb_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Cb_name" Type="char" MaxLength="10" />
+          <Property Name="Cb_price" Type="money" />
+          <Property Name="Cb_pic" Type="image" />
+        </EntityType>
+        <EntityType Name="Dessert">
+          <Key>
+            <PropertyRef Name="D_id" />
+          </Key>
+          <Property Name="D_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="D_name" Type="char" MaxLength="10" Nullable="false" />
+          <Property Name="D_price" Type="money" Nullable="false" />
+        </EntityType>
+        <EntityType Name="DinnerCatagory">
+          <Key>
+            <PropertyRef Name="Categort_id" />
+          </Key>
+          <Property Name="Categort_id" Type="int" Nullable="false" />
+          <Property Name="Category_name" Type="char" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="DrinksCategory">
+          <Key>
+            <PropertyRef Name="Dc_id" />
+          </Key>
+          <Property Name="Dc_id" Type="int" Nullable="false" />
+          <Property Name="Dc_name" Type="char" MaxLength="10" Nullable="false" />
+        </EntityType>
+        <EntityType Name="HotBeverage">
+          <Key>
+            <PropertyRef Name="Hb_Id" />
+          </Key>
+          <Property Name="Hb_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Hb_name" Type="char" MaxLength="10" Nullable="false" />
+          <Property Name="Hb_price" Type="money" Nullable="false" />
+        </EntityType>
+        <EntityType Name="LunchCategory">
+          <Key>
+            <PropertyRef Name="Category_id" />
+          </Key>
+          <Property Name="Category_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Category_name" Type="char" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="OpenBeverage">
+          <Key>
+            <PropertyRef Name="Op_Id" />
+          </Key>
+          <Property Name="Op_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Op_name" Type="char" MaxLength="10" Nullable="false" />
+          <Property Name="Op_price" Type="money" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PrintReceipt">
+          <Key>
+            <PropertyRef Name="Rt_id" />
+          </Key>
+          <Property Name="Rt_id" Type="int" Nullable="false" />
+          <Property Name="Rt_description" Type="text" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ReceiptHistory">
+          <Key>
+            <PropertyRef Name="Rt_id" />
+          </Key>
+          <Property Name="Rt_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Type" Type="char" MaxLength="10" Nullable="false" />
+          <Property Name="Table_id" Type="varchar" MaxLength="50" />
+          <Property Name="User_id" Type="int" />
+          <Property Name="Date" Type="datetime" />
+          <Property Name="Amount" Type="money" Nullable="false" />
+          <Property Name="Due" Type="money" />
+        </EntityType>
+        <EntityType Name="UserList">
+          <Key>
+            <PropertyRef Name="User_id" />
+          </Key>
+          <Property Name="User_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="char" MaxLength="10" Nullable="false" />
+          <Property Name="Access" Type="char" MaxLength="10" Nullable="false" />
+          <Property Name="PassWord" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Server" Type="char" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="ViewReceiptDescription">
+          <Key>
+            <PropertyRef Name="Rt_id" />
+          </Key>
+          <Property Name="Rt_id" Type="int" Nullable="false" />
+          <Property Name="User_id" Type="int" Nullable="false" />
+          <Property Name="Category" Type="char" MaxLength="10" Nullable="false" />
+          <Property Name="Type" Type="char" MaxLength="10" />
+          <Property Name="Descrption" Type="text" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="serveitDBModelStoreContainer">
+          <EntitySet Name="AmericanItems" EntityType="Self.AmericanItems" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="BengaliItems" EntityType="Self.BengaliItems" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="BreakFast" EntityType="Self.BreakFast" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ChineseItems" EntityType="Self.ChineseItems" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ColdBeverage" EntityType="Self.ColdBeverage" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Dessert" EntityType="Self.Dessert" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DinnerCatagory" EntityType="Self.DinnerCatagory" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DrinksCategory" EntityType="Self.DrinksCategory" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="HotBeverage" EntityType="Self.HotBeverage" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LunchCategory" EntityType="Self.LunchCategory" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="OpenBeverage" EntityType="Self.OpenBeverage" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PrintReceipt" EntityType="Self.PrintReceipt" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ReceiptHistory" EntityType="Self.ReceiptHistory" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UserList" EntityType="Self.UserList" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ViewReceiptDescription" EntityType="Self.ViewReceiptDescription" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="serveitDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="AmericanItem">
+          <Key>
+            <PropertyRef Name="A_id" />
+          </Key>
+          <Property Name="A_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="A_name" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="A_price" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+        </EntityType>
+        <EntityType Name="BengaliItem">
+          <Key>
+            <PropertyRef Name="B_id" />
+          </Key>
+          <Property Name="B_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="B_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="B_price" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+        </EntityType>
+        <EntityType Name="BreakFast">
+          <Key>
+            <PropertyRef Name="Item_id" />
+          </Key>
+          <Property Name="Item_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Item_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Item_price" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ChineseItem">
+          <Key>
+            <PropertyRef Name="C_id" />
+          </Key>
+          <Property Name="C_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="C_name" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="C_price" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ColdBeverage">
+          <Key>
+            <PropertyRef Name="Cb_Id" />
+          </Key>
+          <Property Name="Cb_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Cb_name" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+          <Property Name="Cb_price" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="Cb_pic" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Dessert">
+          <Key>
+            <PropertyRef Name="D_id" />
+          </Key>
+          <Property Name="D_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="D_name" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="D_price" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+        </EntityType>
+        <EntityType Name="DinnerCatagory">
+          <Key>
+            <PropertyRef Name="Categort_id" />
+          </Key>
+          <Property Name="Categort_id" Type="Int32" Nullable="false" />
+          <Property Name="Category_name" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+        </EntityType>
+        <EntityType Name="DrinksCategory">
+          <Key>
+            <PropertyRef Name="Dc_id" />
+          </Key>
+          <Property Name="Dc_id" Type="Int32" Nullable="false" />
+          <Property Name="Dc_name" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="HotBeverage">
+          <Key>
+            <PropertyRef Name="Hb_Id" />
+          </Key>
+          <Property Name="Hb_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Hb_name" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="Hb_price" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+        </EntityType>
+        <EntityType Name="LunchCategory">
+          <Key>
+            <PropertyRef Name="Category_id" />
+          </Key>
+          <Property Name="Category_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Category_name" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+        </EntityType>
+        <EntityType Name="OpenBeverage">
+          <Key>
+            <PropertyRef Name="Op_Id" />
+          </Key>
+          <Property Name="Op_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Op_name" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="Op_price" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PrintReceipt">
+          <Key>
+            <PropertyRef Name="Rt_id" />
+          </Key>
+          <Property Name="Rt_id" Type="Int32" Nullable="false" />
+          <Property Name="Rt_description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ReceiptHistory">
+          <Key>
+            <PropertyRef Name="Rt_id" />
+          </Key>
+          <Property Name="Rt_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Type" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="Table_id" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="User_id" Type="Int32" />
+          <Property Name="Date" Type="DateTime" Precision="3" />
+          <Property Name="Amount" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="Due" Type="Decimal" Precision="19" Scale="4" />
+        </EntityType>
+        <EntityType Name="UserList">
+          <Key>
+            <PropertyRef Name="User_id" />
+          </Key>
+          <Property Name="User_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="Access" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="PassWord" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Server" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+        </EntityType>
+        <EntityType Name="ViewReceiptDescription">
+          <Key>
+            <PropertyRef Name="Rt_id" />
+          </Key>
+          <Property Name="Rt_id" Type="Int32" Nullable="false" />
+          <Property Name="User_id" Type="Int32" Nullable="false" />
+          <Property Name="Category" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="Type" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+          <Property Name="Descrption" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="ServeitDBEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="AmericanItems" EntityType="Self.AmericanItem" />
+          <EntitySet Name="BengaliItems" EntityType="Self.BengaliItem" />
+          <EntitySet Name="BreakFasts" EntityType="Self.BreakFast" />
+          <EntitySet Name="ChineseItems" EntityType="Self.ChineseItem" />
+          <EntitySet Name="ColdBeverages" EntityType="Self.ColdBeverage" />
+          <EntitySet Name="Desserts" EntityType="Self.Dessert" />
+          <EntitySet Name="DinnerCatagories" EntityType="Self.DinnerCatagory" />
+          <EntitySet Name="DrinksCategories" EntityType="Self.DrinksCategory" />
+          <EntitySet Name="HotBeverages" EntityType="Self.HotBeverage" />
+          <EntitySet Name="LunchCategories" EntityType="Self.LunchCategory" />
+          <EntitySet Name="OpenBeverages" EntityType="Self.OpenBeverage" />
+          <EntitySet Name="PrintReceipts" EntityType="Self.PrintReceipt" />
+          <EntitySet Name="ReceiptHistories" EntityType="Self.ReceiptHistory" />
+          <EntitySet Name="UserLists" EntityType="Self.UserList" />
+          <EntitySet Name="ViewReceiptDescriptions" EntityType="Self.ViewReceiptDescription" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="serveitDBModelStoreContainer" CdmEntityContainer="ServeitDBEntities">
+          <EntitySetMapping Name="AmericanItems">
+            <EntityTypeMapping TypeName="serveitDBModel.AmericanItem">
+              <MappingFragment StoreEntitySet="AmericanItems">
+                <ScalarProperty Name="A_id" ColumnName="A_id" />
+                <ScalarProperty Name="A_name" ColumnName="A_name" />
+                <ScalarProperty Name="A_price" ColumnName="A_price" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BengaliItems">
+            <EntityTypeMapping TypeName="serveitDBModel.BengaliItem">
+              <MappingFragment StoreEntitySet="BengaliItems">
+                <ScalarProperty Name="B_id" ColumnName="B_id" />
+                <ScalarProperty Name="B_name" ColumnName="B_name" />
+                <ScalarProperty Name="B_price" ColumnName="B_price" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BreakFasts">
+            <EntityTypeMapping TypeName="serveitDBModel.BreakFast">
+              <MappingFragment StoreEntitySet="BreakFast">
+                <ScalarProperty Name="Item_id" ColumnName="Item_id" />
+                <ScalarProperty Name="Item_name" ColumnName="Item_name" />
+                <ScalarProperty Name="Item_price" ColumnName="Item_price" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ChineseItems">
+            <EntityTypeMapping TypeName="serveitDBModel.ChineseItem">
+              <MappingFragment StoreEntitySet="ChineseItems">
+                <ScalarProperty Name="C_id" ColumnName="C_id" />
+                <ScalarProperty Name="C_name" ColumnName="C_name" />
+                <ScalarProperty Name="C_price" ColumnName="C_price" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ColdBeverages">
+            <EntityTypeMapping TypeName="serveitDBModel.ColdBeverage">
+              <MappingFragment StoreEntitySet="ColdBeverage">
+                <ScalarProperty Name="Cb_pic" ColumnName="Cb_pic" />
+                <ScalarProperty Name="Cb_Id" ColumnName="Cb_Id" />
+                <ScalarProperty Name="Cb_name" ColumnName="Cb_name" />
+                <ScalarProperty Name="Cb_price" ColumnName="Cb_price" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Desserts">
+            <EntityTypeMapping TypeName="serveitDBModel.Dessert">
+              <MappingFragment StoreEntitySet="Dessert">
+                <ScalarProperty Name="D_id" ColumnName="D_id" />
+                <ScalarProperty Name="D_name" ColumnName="D_name" />
+                <ScalarProperty Name="D_price" ColumnName="D_price" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DinnerCatagories">
+            <EntityTypeMapping TypeName="serveitDBModel.DinnerCatagory">
+              <MappingFragment StoreEntitySet="DinnerCatagory">
+                <ScalarProperty Name="Categort_id" ColumnName="Categort_id" />
+                <ScalarProperty Name="Category_name" ColumnName="Category_name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DrinksCategories">
+            <EntityTypeMapping TypeName="serveitDBModel.DrinksCategory">
+              <MappingFragment StoreEntitySet="DrinksCategory">
+                <ScalarProperty Name="Dc_id" ColumnName="Dc_id" />
+                <ScalarProperty Name="Dc_name" ColumnName="Dc_name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="HotBeverages">
+            <EntityTypeMapping TypeName="serveitDBModel.HotBeverage">
+              <MappingFragment StoreEntitySet="HotBeverage">
+                <ScalarProperty Name="Hb_Id" ColumnName="Hb_Id" />
+                <ScalarProperty Name="Hb_name" ColumnName="Hb_name" />
+                <ScalarProperty Name="Hb_price" ColumnName="Hb_price" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LunchCategories">
+            <EntityTypeMapping TypeName="serveitDBModel.LunchCategory">
+              <MappingFragment StoreEntitySet="LunchCategory">
+                <ScalarProperty Name="Category_id" ColumnName="Category_id" />
+                <ScalarProperty Name="Category_name" ColumnName="Category_name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OpenBeverages">
+            <EntityTypeMapping TypeName="serveitDBModel.OpenBeverage">
+              <MappingFragment StoreEntitySet="OpenBeverage">
+                <ScalarProperty Name="Op_Id" ColumnName="Op_Id" />
+                <ScalarProperty Name="Op_name" ColumnName="Op_name" />
+                <ScalarProperty Name="Op_price" ColumnName="Op_price" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PrintReceipts">
+            <EntityTypeMapping TypeName="serveitDBModel.PrintReceipt">
+              <MappingFragment StoreEntitySet="PrintReceipt">
+                <ScalarProperty Name="Rt_id" ColumnName="Rt_id" />
+                <ScalarProperty Name="Rt_description" ColumnName="Rt_description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ReceiptHistories">
+            <EntityTypeMapping TypeName="serveitDBModel.ReceiptHistory">
+              <MappingFragment StoreEntitySet="ReceiptHistory">
+                <ScalarProperty Name="Rt_id" ColumnName="Rt_id" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="Table_id" ColumnName="Table_id" />
+                <ScalarProperty Name="User_id" ColumnName="User_id" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+                <ScalarProperty Name="Due" ColumnName="Due" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserLists">
+            <EntityTypeMapping TypeName="serveitDBModel.UserList">
+              <MappingFragment StoreEntitySet="UserList">
+                <ScalarProperty Name="Server" ColumnName="Server" />
+                <ScalarProperty Name="User_id" ColumnName="User_id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Access" ColumnName="Access" />
+                <ScalarProperty Name="PassWord" ColumnName="PassWord" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ViewReceiptDescriptions">
+            <EntityTypeMapping TypeName="serveitDBModel.ViewReceiptDescription">
+              <MappingFragment StoreEntitySet="ViewReceiptDescription">
+                <ScalarProperty Name="Rt_id" ColumnName="Rt_id" />
+                <ScalarProperty Name="User_id" ColumnName="User_id" />
+                <ScalarProperty Name="Category" ColumnName="Category" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="Descrption" ColumnName="Descrption" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
